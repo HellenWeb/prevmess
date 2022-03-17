@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.scss'
+import Routes from './routes'
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-center">Home</h1>
+    <div>
+      <Routes />
     </div>
   );
 }
