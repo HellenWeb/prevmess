@@ -12,6 +12,9 @@ export const Navbar = () => {
                         <a href="/" className="item mr-1 p-3 hover:bg-slate-200 hover:px-3 hover:py-3 transition-all">Home</a>
                         <a href="/contact" className="item p-3 hover:bg-slate-200 hover:px-3 hover:py-3 transition-all">About</a>
                     </div>
+                    <div className="regist mt-4">
+                        <a href="/reg" className="item p-3 hover:bg-slate-300 hover:px-3 hover:py-3 transition-all">Registration</a>
+                    </div>
                 </div>
             </div>
         </nav>

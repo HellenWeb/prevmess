@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
+import Reg from './pages/Reg'
 import { BrowserRouter, Routes, Navigate, Route } from 'react-router-dom'
 
 export const Router = () => {
@@ -9,6 +10,7 @@ export const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<About />} />
+                <Route path="/reg" element={<Reg />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </BrowserRouter>
