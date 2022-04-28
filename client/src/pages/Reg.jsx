@@ -1,25 +1,36 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { useHttp } from '../hooks/http.hook'
+import {useMessage} from '../hooks/message.hook'
 import { render } from '@testing-library/react'
 
 export const Reg = () => {
   const {loading, request, error, clearError} = useHttp()
+  const message = useMessage()
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     email: '', password: ''
   })
+
+  useEffect(() => {
+    message(error)
+    clearError()
+  }, [error, message, clearError])
+
+  useEffect(() => {
+    window.M.updateTextFields()
+  }, [])
 
   const changeHandler = event => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
   const registerHandler = async () => {
-    try {
-      const data = await request('/api/submit/register', 'POST', {...form})
-      return 'OK'
-    } catch (e) {}
+    const data = await request('/api/submit/register', 'POST', {...form})
+    console.log("Hello");
   }
 
   const loginHandler = async () => {
