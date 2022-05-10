@@ -38,6 +38,7 @@ class RequestLog extends Controller
     public function me()
     {
         return response()->json(auth()->user());
+        return redirect()->back();
     }
 
     /**

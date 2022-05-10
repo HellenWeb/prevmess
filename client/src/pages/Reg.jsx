@@ -29,8 +29,11 @@ export const Reg = () => {
   }
 
   const registerHandler = async () => {
-    const data = await request('/api/submit/register', 'POST', {...form})
-    console.log("Hello");
+    try {
+      const data = await request('/api/submit/register', 'POST', {...form})
+      const me = await request('/api/submit/me', 'POST', {...form}) 
+      console.log(me.data);
+    } catch (e) {}
   }
 
   const loginHandler = async () => {
